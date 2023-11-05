@@ -17,6 +17,9 @@ from .models import BlogPost
 def index(request):
     return render(request, 'index.html')
 
+def generate(request):
+    return render(request,'generate.html')
+
 @csrf_exempt
 def generate_blog(request):
     if request.method == 'POST':

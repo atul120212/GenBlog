@@ -25,7 +25,8 @@
 
 ## Flow Chart
 
-![Uploading gen-blog.drawio.png…]()
+![gen-blog drawio](https://github.com/atul120212/GenBlog/assets/87241497/cf5e1b1f-7602-4cea-b997-e452696ae927)
+
 
 
 ## The problem it solves

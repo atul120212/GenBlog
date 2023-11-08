@@ -4,19 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post Details</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Nosifer&display=swap');
+      body{
+        font-family: 'Inter';
+      }
+      .logo{
+        font-family: 'Nosifer';
+      }
+    </style>
 </head>
 <body class="bg-grat-100 font-sans antialiased">
 
     <!-- Navbar -->
-    <nav class="bg-blue-600 p-4 text-white flex justify-between">
-        <div>
-            <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+    <nav class="p-4 text-white flex justify-between">
+        <div class="flex justify-center items-center">
+            <h1 class="logo text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-t from-[#DAE2F8] to-[#D6A4A4] uppercase">
+                <a href="/">gen blog</a>
+            </h1>
         </div>
-        <div>
-            <a href="#" class="text-white hover:underline mx-4">Welcome {{ user.username }}</a>
-            <a href="/blog-list" class="text-white hover:underline mx-4">Saved Blog Posts</a>
-            <a href="#" class="text-white hover:underline">Logout</a>
+        <div class="flex justify-between items-center">
+            {% if user.is_authenticated %}
+            <a href="#" class="text-black mx-4">Welcome {{ user.username }}</a>
+            <a href="/blog-list" class="text-black hover:underline mx-4">Saved Blog Posts</a>
+            <a href="/logout" class="text-black hover:text-blue-500 mx-4">Logout</a>
+            {% else %}
+            <div class="text-black">
+                <a href="/login" class="py-1 px-2 text-sm uppercase border-2 rounded-lg border-slate-500 hover:text-blue-500">Login</a>
+                <a href="/signup" class="py-1 px-2 text-sm border-2 rounded-lg border-blue-500 bg-blue-500 uppercase hover:text-slate-300">Get started</a>
+            </div>
+            {% endif %}
         </div>
     </nav>
 
@@ -40,7 +58,7 @@
     </div>
 
     <footer class="text-center p-4 text-blacl mt-6">
-        Powered by <a href="https://www.youtube.com/codewithtomi">Code With Tomi</a>
+        Created by <span class="text-lg pb-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-pink-500 via-blue-500 to-red-600">Tech Paradise</span>
     </footer>
 </body>
 </html>

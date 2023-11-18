@@ -83,11 +83,12 @@ def get_transcription(link):
 
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(audio_file)
+    print(transcript)
 
     return transcript.text
 
 def generate_blog_from_transcription(transcription):
-    openai.api_key = os.environ.get('OPENAPI')
+    openai.api_key = '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'
 
     prompt = f"Based on the following transcript from a YouTube video, write a comprehensive blog article, write it based on the transcript, but dont make it look like a youtube video, make it look like a proper blog article:\n\n{transcription}\n\nArticle:"
 
@@ -128,7 +129,7 @@ def user_login(request):
                 error_message = "Invalid username or password"
                 return render(request, 'login.html', {'error_message': error_message})
             
-        return render(request, 'login.html')
+        return render(request, 'index.html')
     return redirect('/')
 
 def user_signup(request):
